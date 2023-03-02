@@ -66,9 +66,9 @@ for (let i=0; i<accordeonItemHeader.length; i++) {
 
 //-Кнопки с блюром карточек----------------------------------------------------------------------------------------------------------------------------------
 //Выбор сразу всех кнопок
-const serviceButtons = document.querySelectorAll('.service_button');
+const buttons = document.querySelectorAll('.service_button');
 //Выбор всех карточек
-const serviceFigures = document.querySelectorAll('.service_figure')
+const card = document.querySelectorAll('.service_figure')
 //Выбор самих кнопок отдельно:
 const serviceButtonGarden = document.querySelector('.service_button_gardens');
 const serviceButtonLawn = document.querySelector('.service_button_lawn');
@@ -78,67 +78,146 @@ const serviceFigureGarden = document.querySelectorAll('.service_figure_garden_ca
 const serviceFigureLawn = document.querySelectorAll('.service_figure_lawn_care');
 const serviceFigurePlanting = document.querySelectorAll('.service_figure_planting');
 
-let arrServiceButtons = [serviceButtonGarden, serviceButtonLawn, serviceButtonPlanting]; 
-let arrServiceCards = [serviceFigureGarden, serviceFigureLawn, serviceFigurePlanting];
+
+let gardens = false;
+let lawn  = false;
+let planting = false;
+
+
+const activeButton = (element) => {
+  if (element === buttons[0]) {
+    gardens = !gardens;
+   } else if (element === buttons[1]) {
+    lawn = !lawn;
+   } else if (element === buttons[2]){
+    planting = !planting;
+   }
+   if (element === buttons[0] && lawn === true && planting === true && gardens === true) {
+    buttons[1].classList.toggle('_active_service_button')
+    buttons[2].classList.toggle('_active_service_button')
+    planting = !planting;
+    lawn = !lawn;
+   } else if (element === buttons[1] && lawn === true && planting === true && gardens === true) {
+    buttons[0].classList.toggle('_active_service_button')
+    buttons[2].classList.toggle('_active_service_button')
+    gardens = !gardens;
+    planting = !planting;
+   } else if (element === buttons[2] && lawn === true && planting === true && gardens === true) {
+    buttons[0].classList.toggle('_active_service_button')
+    buttons[1].classList.toggle('_active_service_button')
+    gardens = !gardens;
+    lawn = !lawn;
+   }
+   return {gardens, lawn, planting};
+}
+
+const handleClick = (card) => (event) => {
+  const element = event.target;
+  activeButton(element);
+  element.classList.toggle('_active_service_button');
+
+
+  const active = activeButton();
+
+  const addBlur = (blurIt) => {
+    blurIt.forEach((value) => {
+      value.classList.add('blur');
+    });
+  }
+  const removeBlur = (noBlur) => {
+    noBlur.forEach((value) => {
+      value.classList.remove('blur');
+    });
+  }
+
+//* add/remove blur
+  if (active.gardens === false && active.lawn === false && active.planting === false) {
+    removeBlur(card);
+  } else if (active.gardens === true && active.lawn === false && active.planting === false) {
+    addBlur([card[1], card[2], card[3], card[5]])
+    removeBlur([card[0], card[4]]);
+  } else if (active.gardens === false && active.lawn === true && active.planting === false) {
+    removeBlur([card[2]]);
+    addBlur([card[0], card[1], card[3], card[4], card[5]]);
+  } else if (active.gardens === true && active.lawn === true && active.planting === false) {
+    addBlur([card[1], card[3], card[5]]);
+    removeBlur([card[0], card[2], card[4]]);
+  } else if (active.gardens === false && active.lawn === false && active.planting === true) {
+    addBlur([card[0], card[2], card[4]]);
+    removeBlur([card[1], card[3], card[5]]);
+  } else if (active.gardens === false && active.lawn === true && active.planting === true) {
+    addBlur([card[0], card[4]]);
+    removeBlur([card[1], card[2], card[3], card[5]]);
+  } else if (active.gardens === true && active.lawn === false && active.planting === true) {
+    addBlur([card[2]]);
+    removeBlur([card[0], card[1], card[3],card[4], card[5]]);
+  }
+}
+
+
+buttons.forEach((button,) => {
+  button.addEventListener('click', handleClick(card));
+});
 
 
 
-//если нажата кнопка Gardens
-if(serviceButtonGarden.addEventListener('click', function(){
-    serviceButtonGarden.classList.toggle('_active_service_button') 
-    serviceButtonLawn.classList.toggle('service_disabled_button')
-    serviceButtonPlanting.classList.toggle('service_disabled_button')
-    {
-        for (i=0; i<serviceFigureLawn.length; i++){
-            serviceFigureLawn[i].classList.toggle('blur');
-        };
-        for (i=0; i<serviceFigurePlanting.length; i++) {
-            serviceFigurePlanting[i].classList.toggle('blur');
-        };
-        for (i=0; i<serviceFigureGarden.length; i++) {
-            serviceFigureGarden[i].classList.remove('blur');
-      };
-    } 
-   })    
-);
 
-//если нажата кнопка Lawn
-if(serviceButtonLawn.addEventListener('click', function(){
-   serviceButtonLawn.classList.toggle('_active_service_button') 
-   serviceButtonGarden.classList.toggle('service_disabled_button') 
-    serviceButtonPlanting.classList.toggle('service_disabled_button')
-   {
-        for (i=0; i<serviceFigureGarden.length; i++){
-            serviceFigureGarden[i].classList.toggle('blur');
-        };
-        for (i=0; i<serviceFigurePlanting.length; i++) {
-            serviceFigurePlanting[i].classList.toggle('blur');
-        };
-        for (i=0; i<serviceFigureLawn.length; i++) {
-            serviceFigureLawn[i].classList.remove('blur');
-        };
-    } 
-    })    
-);
+// //если нажата кнопка Gardens
+// if(serviceButtonGarden.addEventListener('click', function(){
+//     serviceButtonGarden.classList.toggle('_active_service_button') 
+//     serviceButtonLawn.classList.toggle('service_disabled_button')
+//     serviceButtonPlanting.classList.toggle('service_disabled_button')
+//     {
+//         for (i=0; i<serviceFigureLawn.length; i++){
+//             serviceFigureLawn[i].classList.toggle('blur');
+//         };
+//         for (i=0; i<serviceFigurePlanting.length; i++) {
+//             serviceFigurePlanting[i].classList.toggle('blur');
+//         };
+//         for (i=0; i<serviceFigureGarden.length; i++) {
+//             serviceFigureGarden[i].classList.remove('blur');
+//       };
+//     } 
+//    })    
+// );
 
-//если нажата кнопка Planting
-if(serviceButtonPlanting.addEventListener('click', function(){
-    serviceButtonPlanting.classList.toggle('_active_service_button')
-    serviceButtonLawn.classList.toggle('service_disabled_button') 
-    serviceButtonGarden.classList.toggle('service_disabled_button') 
-    {
-        for (i=0; i<serviceFigureGarden.length; i++){
-            serviceFigureGarden[i].classList.toggle('blur');
-        };
-        for (i=0; i<serviceFigureLawn.length; i++) {
-            serviceFigureLawn[i].classList.toggle('blur');
-        };
-        for (i=0; i<serviceFigurePlanting.length; i++) {
-            serviceFigurePlanting[i].classList.remove('blur');
-        };
-   } 
-    })    
-);
+// //если нажата кнопка Lawn
+// if(serviceButtonLawn.addEventListener('click', function(){
+//    serviceButtonLawn.classList.toggle('_active_service_button') 
+//    serviceButtonGarden.classList.toggle('service_disabled_button') 
+//     serviceButtonPlanting.classList.toggle('service_disabled_button')
+//    {
+//         for (i=0; i<serviceFigureGarden.length; i++){
+//             serviceFigureGarden[i].classList.toggle('blur');
+//         };
+//         for (i=0; i<serviceFigurePlanting.length; i++) {
+//             serviceFigurePlanting[i].classList.toggle('blur');
+//         };
+//         for (i=0; i<serviceFigureLawn.length; i++) {
+//             serviceFigureLawn[i].classList.remove('blur');
+//         };
+//     } 
+//     })    
+// );
+
+// //если нажата кнопка Planting
+// if(serviceButtonPlanting.addEventListener('click', function(){
+//     serviceButtonPlanting.classList.toggle('_active_service_button')
+//     serviceButtonLawn.classList.toggle('service_disabled_button') 
+//     serviceButtonGarden.classList.toggle('service_disabled_button') 
+//     {
+//         for (i=0; i<serviceFigureGarden.length; i++){
+//             serviceFigureGarden[i].classList.toggle('blur');
+//         };
+//         for (i=0; i<serviceFigureLawn.length; i++) {
+//             serviceFigureLawn[i].classList.toggle('blur');
+//         };
+//         for (i=0; i<serviceFigurePlanting.length; i++) {
+//             serviceFigurePlanting[i].classList.remove('blur');
+//         };
+//    } 
+//     })    
+// );
 
 
 //--Select--------------------------------------------------------------------------------------------------------------------------------
@@ -210,28 +289,3 @@ sherrillId.addEventListener('click', function(){
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-    console.log(`
-
-        Score: 105/125 => Общая оценка 100 баллов
-
-        [30/50] При нажатии на кнопки:Gargens,Lawn,Planting происходит смена фокуса на услугах в разделе service +50
-   
-        + При выборе одной услуги (нажатии одной кнопки), остальные карточки услуг принимают эффект blur, выбранная услуга остается неизменной + 20
-    
-        - Пользователь может нажать одновременно две кнопки услуги, тогда эта кнопка тоже принимает стиль активной и карточки с именем услуги выходят из эффекта blur. При этом пользователь не может нажать одновременно все три кнопки услуг. +20
-        
-        + Анимации плавного перемещения кнопок в активное состояние и карточек услуг в эффект blur +10
-    
-        [50/50] + Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах + 50
-    
-            + При нажатии на dropdown кнопку появляется описание тарифов цен в соответствии с макетом. Внутри реализована кнопка order, которая ведет на секцию contacts, при нажатии на нее Accordion все еще остается открытым. +25
-    
-            + Пользователь может самостоятельно закрыть содержимое нажав на кнопку dropup, но не может одновременно открыть все тарифы услуг, при открытии нового тарифа предыдущее автоматически закрывается. +25
-        
-        [25/25] В разделе contacts реализован select с выбором городов +25
-    
-        + В зависимости от выбора пользователя появляется блок с адресом и телефоном офиса в определенном городе +15
-    
-        + При нажатии на кнопку Call us реализован вызов по номеру, который соответствует выбранному городу +10
-    `)
