@@ -82,9 +82,6 @@ let arrServiceCards = [serviceFigureGarden, serviceFigureLawn, serviceFigurePlan
 console.log(arrServiceButtons);
 console.log(serviceFigureGarden);
 
-kjhkj
-
-
 //если нажата кнопка Gardens
 if(serviceButtonGarden.addEventListener('click', function(){
     serviceButtonGarden.classList.toggle('_active_service_button') 
