@@ -188,6 +188,11 @@ a{
     background-color: #E06733;
     color: #ffffff;
 }
+
+.active_button {
+    background-color: #E06733;
+    color: #ffffff; 
+}
 /*----------------------------------------------------------*/
 .about_wrapper {
     display: flex;
@@ -793,6 +798,6 @@ a{
 }
 
 .service_disabled_button {
-    background-color: #717171;
+    background-color: #c4bebe;
     pointer-events: none;
 }

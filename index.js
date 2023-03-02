@@ -67,6 +67,8 @@ for (let i=0; i<accordeonItemHeader.length; i++) {
 //-Кнопки с блюром карточек----------------------------------------------------------------------------------------------------------------------------------
 //Выбор сразу всех кнопок
 const serviceButtons = document.querySelectorAll('.service_button');
+//Выбор всех карточек
+const serviceFigures = document.querySelectorAll('.service_figure')
 //Выбор самих кнопок отдельно:
 const serviceButtonGarden = document.querySelector('.service_button_gardens');
 const serviceButtonLawn = document.querySelector('.service_button_lawn');
@@ -79,15 +81,13 @@ const serviceFigurePlanting = document.querySelectorAll('.service_figure_plantin
 let arrServiceButtons = [serviceButtonGarden, serviceButtonLawn, serviceButtonPlanting]; 
 let arrServiceCards = [serviceFigureGarden, serviceFigureLawn, serviceFigurePlanting];
 
-console.log(arrServiceButtons);
-console.log(serviceFigureGarden);
-
-
 
 
 //если нажата кнопка Gardens
 if(serviceButtonGarden.addEventListener('click', function(){
     serviceButtonGarden.classList.toggle('_active_service_button') 
+    serviceButtonLawn.classList.toggle('service_disabled_button')
+    serviceButtonPlanting.classList.toggle('service_disabled_button')
     {
         for (i=0; i<serviceFigureLawn.length; i++){
             serviceFigureLawn[i].classList.toggle('blur');
@@ -105,6 +105,8 @@ if(serviceButtonGarden.addEventListener('click', function(){
 //если нажата кнопка Lawn
 if(serviceButtonLawn.addEventListener('click', function(){
    serviceButtonLawn.classList.toggle('_active_service_button') 
+   serviceButtonGarden.classList.toggle('service_disabled_button') 
+    serviceButtonPlanting.classList.toggle('service_disabled_button')
    {
         for (i=0; i<serviceFigureGarden.length; i++){
             serviceFigureGarden[i].classList.toggle('blur');
@@ -121,7 +123,9 @@ if(serviceButtonLawn.addEventListener('click', function(){
 
 //если нажата кнопка Planting
 if(serviceButtonPlanting.addEventListener('click', function(){
-    serviceButtonPlanting.classList.toggle('_active_service_button') 
+    serviceButtonPlanting.classList.toggle('_active_service_button')
+    serviceButtonLawn.classList.toggle('service_disabled_button') 
+    serviceButtonGarden.classList.toggle('service_disabled_button') 
     {
         for (i=0; i<serviceFigureGarden.length; i++){
             serviceFigureGarden[i].classList.toggle('blur');
@@ -137,10 +141,8 @@ if(serviceButtonPlanting.addEventListener('click', function(){
 );
 
 
-
 //--Select--------------------------------------------------------------------------------------------------------------------------------
-
-const contactImg = document.querySelector('.contacts_img')
+const contactImg = document.querySelector('.contacts_img');
 
 let select = function () {
     let selectHeader = document.querySelectorAll('.select_header');
@@ -162,6 +164,7 @@ let select = function () {
             let select = this.closest('.contacts_select');
             currentText.innerText = text;
             select.classList.remove('_active_select');
+            contactImg.classList.add('active_women');
         })
     });
 };
