@@ -82,6 +82,9 @@ let arrServiceCards = [serviceFigureGarden, serviceFigureLawn, serviceFigurePlan
 console.log(arrServiceButtons);
 console.log(serviceFigureGarden);
 
+
+
+
 //если нажата кнопка Gardens
 if(serviceButtonGarden.addEventListener('click', function(){
     serviceButtonGarden.classList.toggle('_active_service_button') 
@@ -137,9 +140,12 @@ if(serviceButtonPlanting.addEventListener('click', function(){
 
 //--Select--------------------------------------------------------------------------------------------------------------------------------
 
+const contactImg = document.querySelector('.contacts_img')
+
 let select = function () {
     let selectHeader = document.querySelectorAll('.select_header');
     let selectItem = document.querySelectorAll('.select_item');
+
 //При клике на шапку селекта добавляю активный класс самой шапке и выпадающему списку городов
     selectHeader.forEach(item => {
         item.addEventListener('click', function(){

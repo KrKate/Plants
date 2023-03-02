@@ -44,6 +44,12 @@ a{
     color: #000000;
     cursor: pointer;
 }
+
+
+.hide {
+    display:none;
+}
+
 /*-Header-----------------------------------------------------*/
 .header {
     background-color: #EDF2EC;
@@ -719,15 +725,6 @@ a{
     display: block;
 }
 
-/*.contacts_select_button {
-    width: 16px;
-    height: 16px;
-    margin-right: 33px;
-    background-image: url(./assets/img/accordion_btn.svg);
-    border-radius: 50%;
-    border: none; 
-}
-*/
 .footer {
     font-family: 'Inter';
     font-style: normal;
