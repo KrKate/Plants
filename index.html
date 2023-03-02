@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_tablet_and_mobile.css">
+    <link rel="icon" href="./assets/img/favicon.ico" sizes="32x32">
+</head>
+
+<body class="body">
+  <!--Header--> 
+    <header class="header">
+        <div class="header_wrapper">
+<!--Логотип-->
+            <div class="logo">
+                <img class="logo_img" alt="logo_img" src="./assets/img/logo_vector.svg">
+                <a href="#">Plants</a>
+            </div>
+<!--Бургер-меню-->
+            <div class="header_burger">
+                <button class="burger_btn" type="button">
+                    <span class="burger_btn_line burger_btn_line1"></span>
+                    <span class="burger_btn_line burger_btn_line2"></span>
+                    <span class="burger_btn_line burger_btn_line3"></span>
+                    <span class="burger_btn_line burger_btn_line4"></span>
+                </button>
+            </div>
+<!--Навигация-->
+            <nav class="header_navigation">     
+                <ul class="header_list">
+                    <li class="header_list_item"><a class="header_list_link" href="#welcome">Home</a></li>
+                    <li class="header_list_item"><a class="header_list_link" href="#about">About us</a></li>
+                    <li class="header_list_item"><a class="header_list_link" href="#service">Service</a></li>
+                    <li class="header_list_item"><a class="header_list_link" href="#prices">Price</a></li>
+                    <li class="header_list_item"><a class="header_list_link" href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>          
+        </div>
+    </header>
+    <main>
+<!--Welcome section-->
+        <section class="welcome" id="welcome">
+            <div class="welcome_wrapper">
+                <img src="./assets/img/leafs.png" class="welcome_img" alt="Leafs">
+                <div class="welcome_information">
+                    <h1 class="welcome_h1">We grow <span class="welcome_green_font">plants </span> and give you oxygen</h1>
+                    <p class="welcome_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <button class="welcome_button">LEARN MORE</button>
+                </div>
+            </div>
+        </section>
+<!--About section-->
+        <section class="about" id="about">
+            <div class="about_wrapper">
+                <div class="about_information">
+                    <h2 class="about_h2"><span class="green_font">We are</span> professional<br>experienced <span class="green_font">gardeners</span></h2>
+                    <p class="about_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                </div>
+                <img src="./assets/img/about_houseplant.png" alt="Houseplant" class="about_img">
+            </div>
+        </section>
+<!--Service section-->
+        <section class="service" id="service">
+            <div class="service_wrapper">
+                <div class="service_information">
+                    <h2 class="service_h2">Service and our <br>projects</h2>
+                    <div class="service_buttons">
+                        <button class="service_button service_button_gardens" type="button">Gardens </button>
+                        <button class="service_button service_button_lawn" type="button">Lawn</button>
+                        <button class="service_button service_button_planting" type="button">Planting</button>
+                    </div>
+                </div>
+<!--Грид-контейнер-->
+                <div class="service_grid_container">
+<!--Первый блок с картинкой service-->
+                    <figure class="service_figure service_figure_garden_care">      
+                        <img src="./assets/img/first_all.jpg" alt="first_img" class="service_img"> 
+                        <figcaption class="service_figure_figcaption"> 
+                            <h4 class="service_figcaption_name">Garden care</h4>
+                            <p class="service_figcaption_text">Lorem ipsum has been the industry</p>
+                        </figcaption>
+                    </figure>                 
+<!--Второй блок с картинкой service-->
+                <figure class="service_figure service_figure_planting">
+                    <img src="./assets/img/second_all.jpg" alt="second_img" class="service_img">
+                    <figcaption class="service_figure_figcaption">
+                        <h4 class="service_figcaption_name">Planting</h4>
+                        <p class="service_figcaption_text">Lorem ipsum has been the industry</p>
+                    </figcaption>
+                </figure>
+<!--Третий блок с картинкой service-->
+                <figure class="service_figure service_figure_lawn_care">
+                    <img src="./assets/img/third_all.jpg" alt="third_img" class="service_img">
+                    <figcaption class="service_figure_figcaption">
+                        <h4 class="service_figcaption_name">Lawn care</h4>
+                        <p class="service_figcaption_text">Lorem ipsum has been the industry</p>
+                    </figcaption>
+                </figure>
+<!--Четвертый блок с картинкой service-->
+                <figure class="service_figure service_figure_planting">
+                    <img src="./assets/img/fourth_all.jpg" alt="fourth_img" class="service_img">
+                    <figcaption class="service_figure_figcaption">
+                        <h4 class="service_figcaption_name">Planting</h4>
+                        <p class="service_figcaption_text">Lorem ipsum has been the industry</p>
+                    </figcaption>
+                </figure>
+<!--Пятый блок с картинкой service-->
+                <figure class="service_figure service_figure_garden_care">
+                    <img src="./assets/img/fifth_all.jpg" alt="fifth_img" class="service_img">
+                    <figcaption class="service_figure_figcaption">
+                        <h4 class="service_figcaption_name">Garden care</h4>
+                        <p class="service_figcaption_text">Lorem ipsum has been the industry</p>
+                    </figcaption>
+                </figure>
+<!--Шестой блок с картинкой service-->
+                <figure class="service_figure service_figure_planting">
+                    <img src="./assets/img/sixth_all.jpg" alt="sixth_img" class="service_img">
+                    <figcaption class="service_figure_figcaption">
+                        <h4 class="service_figcaption_name">Planting</h4>
+                        <p class="service_figcaption_text">Lorem ipsum has been the industry</p>
+                    </figcaption>
+                </figure>
+<!--Завершение грид-контейнера:-->
+</div>
+<!--Clear_div создан, т.к. не удалось выставить margin после грид-контейнера. Придумать, как сделать нормально!-->
+                <div class="clear_div"></div>
+            </div>
+        </section>
+<!--Prices section-->
+        <section class="prices" id="prices">
+            <div class="prices_wrapper">
+<!--Половина секции prices с аккордеоном-->
+                <div class="prices_accordeon_side">
+                    <h2 class="prices_h2">Prices</h2>
+                    <div class="accordeon_container">
+<!--Элемент аккодеона Basics-->
+<!--Активное положение кнопки--> 
+                    <div class="accordeon_item_container">
+<!--Шапка аккордеона----------------------------------------------------------------->
+                        <div class="accordeon_item_header">
+                            <span class="name_accordeon">Basics</span>
+                  <!--         <button class="accordeon_button"></button>--> 
+                        </div>
+<!--Скрывающаяся часть аккордеона---------------------------------------------------->                        
+                        <div class="accordeon_item_content">
+                            <div class="accordeon_description">
+                                Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                            </div>
+                            <div class="accordeon_per_hour">
+                                <span class="dollars">$15</span><span class="per_hour">/ per hour</span>
+                            </div>
+                            <a class="accordeon_order_btn" href="#contacts">Order</a>
+                        </div>
+                    </div>    
+<!--Элемент аккордеона Standart-->                     
+                    <div class="accordeon_item_container">
+                        <div class="accordeon_item_header">
+                            <span class="name_accordeon">Standart</span>
+                            <button class="accordeon_button"></button>
+                        </div>
+                        <div class="accordeon_item_content">
+                            <div class="accordeon_description">
+                                Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                            </div>
+                            <div class="accordeon_per_hour">
+                                <span class="dollars">$25</span><span class="per_hour">/ per hour</span>
+                            </div>
+                            <a class="accordeon_order_btn" href="#contacts">Order</a>
+                        </div>
+                    </div>
+<!--Элемент акккордеона Pro care-->                     
+                    <div class="accordeon_item_container">
+<!--Шапка аккордеона------------------------------------------------------>                        
+                        <div class="accordeon_item_header">
+                            <span class="name_accordeon">Pro care</span>
+                            <button class="accordeon_button"></button>
+                        </div>
+<!--Скрывающаяся часть аккордеона----------------------------------------->                        
+                        <div class="accordeon_item_content">
+                            <div class="accordeon_description">
+                                Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                            </div>
+                            <div class="accordeon_per_hour">
+                                <span class="dollars">$35</span><span class="per_hour">/ per hour</span>
+                            </div>
+                            <a class="accordeon_order_btn" href="#contacts">Order</a>
+                        </div>
+                    </div>
+ <!----------------------------------------------------------------------------------------------------------------->                       
+                    </div>
+                </div>
+<!--Половина секции prices c кнопкой-->
+                <div class="prices_button_side">
+                    <p class="prices_p">Our best <span class="green_font">gardeners</span> are ready to help you</p>
+                    <button class="prices_button" type="button">Contact us</button>
+                    <div><img src="./assets/img/leafs_little.png" alt="Little leafs" class="prices_img"></div>
+                </div>
+            </div>
+        </section>
+<!--Contacts section-->
+        <section class="contacts" id="contacts">
+            <div class="contacts_wrapper">
+            <img class="contacts_img" src="./assets/img/contact_woman.png" alt="woman">
+            <h2 class="contacts_h2">Contact us</h2>
+<!--Выпадающий список городов-->
+            <div class="contacts_select">
+                <div class="select_header">
+                    <span class="select_current">City</span>
+                </div>
+                <div class="select_icon"></div>
+                <div class="select_body">
+                    <div class="select_item" id="canandaigua">Canandaigua, NY</div>
+                    <div class="select_item" id="newYork">New York City, NY</div>
+                    <div class="select_item" id="yonkers">Yonkers, NY</div>
+                    <div class="select_item" id="sherrill">Sherrill, NY</div>
+                </div>
+            </div>
+<!--Карточки с городами----------------------------------------------->
+<!--Canandaigua------------------------------------------------------->
+            <div class="service_card_wrapper canandaigua">
+                <div class="service_card_information">
+                    <div class="service_card_information_name">
+                        <p>City:</p>
+                        <p>Phone:</p>
+                        <p>Office address:</p>
+                    </div>
+                    <div class="service_card_information_meaning">
+                        <p>Canandaigua, NY</p>
+                        <p>+1 585 393 0001</p>
+                        <p>151 Charlotte Street</p>
+                    </div>
+                </div>
+                <a class="service_card_number" href="tel:+15853930001">Call us</a>
+            </div>
+<!--New York------------------------------------------------------->
+            <div class="service_card_wrapper new_york">
+                <div class="service_card_information">
+                    <div class="service_card_information_name">
+                        <p>City:</p>
+                        <p>Phone:</p>
+                        <p>Office address:</p>
+                    </div>
+                    <div class="service_card_information_meaning">
+                        <p>New York City</p>
+                        <p>+1 212 456 0002</p>
+                        <p>9 East 91st Street</p>
+                    </div>
+                </div>
+                <a class="service_card_number" href="tel:+12124560002">Call us</a>
+            </div>
+<!--Yonkers------------------------------------------------------->
+            <div class="service_card_wrapper yonkers">
+                <div class="service_card_information">
+                    <div class="service_card_information_name">
+                        <p>City:</p>
+                        <p>Phone:</p>
+                        <p>Office address:</p>
+                    </div>
+                    <div class="service_card_information_meaning">
+                        <p>Yonkers, NY</p>
+                        <p>+1 914 678 0003</p>
+                        <p>511 Warburton Ave</p>
+                    </div>
+                </div>
+                <a class="service_card_number" href="tel:+19146780003">Call us</a>
+            </div>
+<!--Sherrill------------------------------------------------------->
+            <div class="service_card_wrapper sherrill">
+                <div class="service_card_information">
+                    <div class="service_card_information_name">
+                        <p>City:</p>
+                        <p>Phone:</p>
+                        <p>Office address:</p>
+                    </div>
+                    <div class="service_card_information_meaning">
+                        <p>Sherrill, NY</p>
+                        <p>+1 315 908 0004</p>
+                        <p>14 WEST Noyes BLVD</p>
+                    </div>
+                </div>
+                <a class="service_card_number" href="tel:+13159080004">Call us</a>
+            </div>
+<!--Завершение карточек с городами------------------------------------>
+        </section>
+    </main>
+<!--Footer-->
+    <footer class="footer">
+        <div class="footer_wrapper">
+            <div class="footer_information">
+               <span>©</span>
+               <span class="footer_year">2022</span>
+               <a href="https://github.com/KrKate" target="_blank" class="footer_github">github</a>
+            </div>
+            <span class="footer_rss"><a href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a></span>
+            <ul class="footer_social_media">
+                <li><a href="https://www.instagram.com" target="_blank"><img class="footer_icon" src="./assets/img/inst.svg" alt="Instagram"></a></li>
+                <li><a href="https://facebook.com" target="_blank"><img class="footer_icon" src="./assets/img/fb.svg" alt="Facebook"></a></li>
+                <li><a href="https://twitter.com" target="_blank"><img class="footer_icon" src="./assets/img/tw.svg" alt="Twitter"></a></li>
+                <li><a href="https://pinterest.com" target="_blank"><img class="footer_icon" src="./assets/img/pinterest.svg" alt="Pinterest"></a></li>
+            </ul>
+        </div>
+    </footer>
+ <script src="index.js"></script>
+</body>
+</html>
